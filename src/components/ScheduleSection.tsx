@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 
+interface Course {
+    Курс: string;
+    Дата: string;
+    Время: string;
+}
+
 export default function ScheduleSection() {
-    const [courses, setCourses] = useState([]);
+    const [courses, setCourses] = useState<Course[]>([]);
 
     useEffect(() => {
-        Papa.parse(
+        Papa.parse<Course>(
             'https://docs.google.com/spreadsheets/d/e/2PACX-1vS8ksBE8X5UU8udXQzPQnty5cvfuHY38-GLgAiv-nV_N1hFad3-fQ-ytjFRypEYNhOQWZtQrtPcQo41/pub?output=csv',
             {
                 download: true,
                 header: true,
                 complete: (results) => {
-                    const filteredData = results.data.filter(row => row.Курс && row.Дата && row.Время);
+                    const filteredData = results.data.filter(
+                        (row): row is Course =>
+                            !!row.Курс && !!row.Дата && !!row.Время
+                    );
                     setCourses(filteredData);
                 },
             }

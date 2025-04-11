@@ -1,5 +1,6 @@
 import React from 'react';
 import ScheduleSection from './components/ScheduleSection';
+import Navbar from './components/Navbar';
 import {
     Sparkles,
     MapPin,
@@ -17,9 +18,13 @@ import {
 
 function App() {
     const handleWhatsApp = () => {
-        const name = document.querySelector('#name')?.value || '';
-        const email = document.querySelector('#email')?.value || '';
-        const message = document.querySelector('#message')?.value || '';
+        const name =
+            (document.querySelector('#name') as HTMLInputElement)?.value || '';
+        const email =
+            (document.querySelector('#email') as HTMLInputElement)?.value || '';
+        const message =
+            (document.querySelector('#message') as HTMLTextAreaElement)
+                ?.value || '';
 
         const fullMessage = `Здравствуйте! Меня зовут ${name}. Мой email: ${email}. ${message}`;
         const phone = '4917662521437'; // твой номер в международном формате без +
@@ -37,74 +42,10 @@ function App() {
         document.body.appendChild(script);
     }, []);
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen bg-black overflow-x-hidden">
             {/* Navbar */}
-            <nav className="bg-black border-b border-gold sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4 flex justify-between items-center text-white">
-                    <a
-                        href="https://www.instagram.com/chaykovskaya_pronails"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="/logo.png"
-                            alt="Diva Nails Bar Logo"
-                            className="h-10"
-                        />
-                    </a>
-                    <ul className="flex space-x-6 text-sm md:text-base">
-                        <li>
-                            <a
-                                href="#courses"
-                                className="hover:text-gold transition"
-                            >
-                                Наши курсы
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#gallery"
-                                className="hover:text-gold transition"
-                            >
-                                Наши работы
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#testimonials"
-                                className="hover:text-gold transition"
-                            >
-                                Отзывы учениц
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#schedule"
-                                className="hover:text-gold transition"
-                            >
-                                Расписание курсов
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#video"
-                                className="hover:text-gold transition"
-                            >
-                                Видео с курсов
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#contact"
-                                className="hover:text-gold transition"
-                            >
-                                Контакты и запись
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <Navbar />
+            <div className="h-20" />
 
             {/* Hero Section */}
             <div
@@ -123,7 +64,7 @@ function App() {
                             />
                         </div>
                         <div className="max-w-3xl">
-                            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                                 Школа маникюра{' '}
                                 <span className="text-gold">
                                     Натальи Чайковской
@@ -715,7 +656,7 @@ function App() {
                             ></textarea>
                             <button
                                 onClick={handleWhatsApp}
-                                className="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition duration-300"
+                                className="bg-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition duration-300"
                             >
                                 Написать в WhatsApp
                             </button>
