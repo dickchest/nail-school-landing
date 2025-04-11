@@ -106,5 +106,47 @@
                 }
             }
         }
+    },
+    "ourWork": {
+        "title": "Unsere",
+        "highlight": "Arbeiten"
+    },
+    "testimonials": {
+        "title": "Bewertungen",
+        "highlight": "der Schülerinnen",
+        "list": [
+            {
+                "name": "Elena",
+                "review": "Vielen lieben Dank ❤️❤️❤️ Ich bin immer noch voller Emotionen! Ich erzähle allen um mich herum nur von unserem Kurs und von all den tollen Mädels. Ich habe mich so sehr mit euch allen verbunden gefühlt 🥹 Noch einmal ein riesiges Dankeschön für diese drei Tage – es war einfach großartig!!!"
+            },
+            {
+                "name": "Varvarushka",
+                "review": "Vielen Dank für eure lieben Worte! Es ist unglaublich schön zu spüren, wie sehr ihr uns unterstützt und an uns glaubt. Ihr seid ein wahrer Profi und eine echte Inspiration! Ich bin so froh, dass ich den Kurs genau bei euch gemacht habe – dieses Wissen wird uns zu 100 % weiterhelfen. Nochmals danke für eure Herzlichkeit und euer Können ❤️❤️❤️❤️❤️ Es war so schön, euch alle kennenzulernen – ich habe euch in diesen 3 Tagen wirklich ins Herz geschlossen ❤️❤️❤️"
+            },
+            {
+                "name": "Sashulya",
+                "review": "Ein riesiges Dankeschön an Natalia 😻 für ihre Professionalität und an Marina 😻 für ihre Unterstützung! Ich bin sehr dankbar für alles, was ich in diesen drei Tagen gelernt habe. Ich freue mich so sehr, dass ich alle Mädels kennenlernen durfte – ihr seid großartig ❤️❤️❤️❤️❤️ Ich wünsche euch allen ganz viel Erfolg ❤️❤️❤️❤️❤️"
+            },
+            {
+                "name": "Natalia",
+                "review": "Vielen Dank für eure Worte! Und vor allem danke für die großartige Arbeit, die ihr geleistet habt! Ihr seid einfach spitze! Ich bin sehr dankbar für diesen wunderbaren Kurs! Ein besonderes Dankeschön geht an Marina – sie hat uns unterstützt und war immer für uns da ❤️ Allen Mädels wünsche ich viel Erfolg im Beruf, viele tolle Kunden und stetiges Wachstum in dieser Branche 🙌🏻❤️"
+            },
+            {
+                "name": "Sveta",
+                "review": "Liebe Mädels, ❤️❤️❤️ es war mir eine riesige Freude, euch alle kennenzulernen! Ich möchte meine große Dankbarkeit an Natalia ❤️🫂 aussprechen für die enorme Arbeit, die sie mit uns geleistet hat. Danke Ihnen 🫶🏻 für Ihr Wissen, Ihre Geduld, Ihren Glauben an uns und dafür, dass Sie uns diesen Weg von Grund auf gezeigt und so viel Herzblut und Mühe in uns investiert haben. Das ist unbezahlbar! 🙏😘"
+            },
+            {
+                "name": "Marina",
+                "review": "Hallo ☺️ Ich bin total begeistert 😍 Gestern auf dem Heimweg hatte ich die ganze Zeit ein Lächeln im Gesicht 😅 Ich habe mein Zertifikat die ganze Zeit festgehalten – konnte kaum glauben, dass es wirklich meins ist 😅 Natalia ist einfach die beste Lehrerin, die man sich wünschen kann 😘 Die Mädels – unsere Betreuerinnen – sind auch die allerbesten 😘❤️ Sie haben uns so sehr geholfen 🤗 Meine kleinen Hühner 🤗😻 Ein riesengroßes DANKESCHÖN an Natalia – sie hat mir so viel beigebracht und gezeigt, wie man es richtig macht ❤️❤️❤️ Ich habe alles gelernt, was ich wollte – und sogar das, was ich eigentlich nicht wollte 😅 Ich bin so froh, dass ich genau bei Natalia die Ausbildung gemacht habe 😘 Und wir Mädels kommen auf jeden Fall zur Weiterbildung zurück – so leicht werdet ihr uns nicht los 🤣❤️❤️❤️😘😘😘"
+            },
+            {
+                "name": "Sveta",
+                "review": "Hallo ihr Lieben! Ich möchte ein großes Dankeschön aussprechen – an Natalia für ihre Arbeit. Ich dachte, es sei für mich schon zu spät, um Maniküre zu lernen. Aber alles hat meine Erwartungen übertroffen. Dank Natalia und den Betreuerinnen Viktoria und Lilia habe ich noch mehr an mich geglaubt. Die Mädels waren so aufmerksam und haben uns keine Sekunde allein gelassen."
+            },
+            {
+                "name": "Lydia",
+                "review": "Hallo zusammen 😘 Ich möchte mich noch einmal bei unserer SENSEI Natalia und den Betreuerinnen Viktoria und Lilia für die drei wunderbaren Tage bedanken, die wir gemeinsam verbracht haben. Ich bin immer noch ganz beeindruckt und habe heute den ganzen Tag bei der Arbeit von euch und unserer großartigen Gruppe erzählt. Nochmals vielen Dank für eure harte Arbeit, eure Geduld – und ich komme ganz sicher zur Weiterbildung zu euch zurück. Ich bin stolz auf euch, und euer Studio ist das allerbeste!!!! ❤️❤️❤️😘😘😘"
+            }
+        ]
     }
 }
