@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
-const navItems = [
-    { href: '#courses', label: 'Наши курсы' },
-    { href: '#gallery', label: 'Наши работы' },
-    { href: '#testimonials', label: 'Отзывы учениц' },
-    { href: '#schedule', label: 'Расписание курсов' },
-    { href: '#video', label: 'Видео с курсов' },
-    { href: '#contact', label: 'Контакты и запись' },
-];
+
 
 export default function Navbar() {
+    const { t } = useTranslation();
+
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const navItems = [
+        { href: '#courses', label: t('navbar.courses') },
+        { href: '#gallery', label: t('navbar.gallery') },
+        { href: '#testimonials', label: t('navbar.testimonials') },
+        { href: '#schedule', label: t('navbar.schedule') },
+        { href: '#video', label: t('navbar.videos') },
+        { href: '#contact', label: t('navbar.contact') },
+    ];
 
     return (
         <nav className="fixed top-0 left-0 w-full bg-black border-b border-gold z-50">
@@ -32,7 +38,10 @@ export default function Navbar() {
                 <ul className="hidden md:flex space-x-6 text-sm md:text-base">
                     {navItems.map((item) => (
                         <li key={item.href}>
-                            <a href={item.href} className="hover:text-gold transition">
+                            <a
+                                href={item.href}
+                                className="hover:text-gold transition"
+                            >
                                 {item.label}
                             </a>
                         </li>
@@ -40,12 +49,30 @@ export default function Navbar() {
                 </ul>
 
                 {/* Burger Menu Button */}
-                <button
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    className="md:hidden focus:outline-none"
-                >
-                    {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
+                <div className="flex items-center space-x-4">
+                    <button
+                        onClick={() => i18n.changeLanguage('ru')}
+                        className="hover:text-gold"
+                    >
+                        🇷🇺
+                    </button>
+                    <button
+                        onClick={() => i18n.changeLanguage('de')}
+                        className="hover:text-gold"
+                    >
+                        🇩🇪
+                    </button>
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="md:hidden focus:outline-none ml-8"
+                    >
+                        {menuOpen ? (
+                            <X className="w-6 h-6" />
+                        ) : (
+                            <Menu className="w-6 h-6" />
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu Items */}

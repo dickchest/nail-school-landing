@@ -1,0 +1,110 @@
+{
+    "navbar": {
+        "courses": "Unsere Kurse",
+        "gallery": "Unsere Arbeiten",
+        "testimonials": "Bewertungen",
+        "schedule": "Kursplan",
+        "videos": "Videos von Kursen",
+        "contact": "Kontakt & Anmeldung"
+    },
+    "hero": {
+        "title": "Nagelschule von",
+        "name": "Natalia Chaykovskaya",
+        "subtitle": "Professionelle Ausbildung in Maniküre und Pediküre in Essen",
+        "button": "Zum Kurs anmelden"
+    },
+    "courses": {
+        "sectionTitle": "Unsere <1>Kurse</1>",
+        "basicManicure": {
+            "title": "Grundkurs Maniküre",
+            "duration": "3 Tage",
+            "models": "5 Modelle",
+            "price": "500€",
+            "priceNote": "Vollständiger Kurs",
+            "who": "Geeignet für:",
+            "whoItems": [
+                "Anfänger ohne Erfahrung",
+                "Autodidakten, die nach YouTube-Videos arbeiten",
+                "Nageldesigner nach längerer Pause"
+            ],
+            "program": "Kursprogramm:",
+            "programItems": [
+                "Kombinierte Maniküre",
+                "Nagellack bis zur Nagelhaut",
+                "Nivellierung der Nagelplatte",
+                "Nagelarchitektur"
+            ],
+            "schedule": "Kursplan:",
+            "scheduleItems": [
+                "Tag 1: Theorie, Fräserarbeit, Praxis am ersten Modell",
+                "Tag 2: Praxis an zwei Modellen",
+                "Tag 3: Zwei Modelle und Zertifikatsvergabe"
+            ],
+            "youGet": "Sie erhalten:",
+            "youGetItems": [
+                "Zertifikat nach Kursabschluss",
+                "Checkliste „Grundausstattung für Nageldesigner“",
+                "3 Monate Support nach dem Kurs"
+            ]
+        },
+        "basicPedicure": {
+            "title": "Grundkurs Pediküre",
+            "duration": "1 Tag",
+            "models": "2 Modelle",
+            "price": "350€ - 500€",
+            "priceNote": "Gruppe / Einzelunterricht",
+            "who": "Geeignet für:",
+            "whoItems": [
+                "Aktive Maniküre-Spezialisten",
+                "Absolventen des Basiskurses Maniküre"
+            ],
+            "program": "Kursprogramm:",
+            "programItems": [
+                "Fußpflege mit spezieller Kosmetik",
+                "Technik des Gel-Lacks",
+                "Besonderheiten der Pediküre"
+            ],
+            "format": "Unterrichtsformat:",
+            "formatItems": [
+                "Gruppe (2 Meister): 350€ pro Person",
+                "Einzeln: 500€"
+            ],
+            "youGet": "Sie erhalten:",
+            "youGetItems": [
+                "Zertifikat für den Kursabschluss",
+                "Alle Materialien inbegriffen",
+                "Quittung für das Finanzamt"
+            ]
+        },
+        "advancedCourse": {
+            "title": "Weiterbildung",
+            "duration": "1 Tag",
+            "models": "2–4 Modelle",
+            "price": "350€ - 450€",
+            "priceNote": "Gruppe / Einzelunterricht",
+            "who": "Geeignet für:",
+            "whoItems": [
+                "Aktive Spezialisten für kombinierte Maniküre",
+                "Diejenigen, die ihre Geschwindigkeit und Qualität verbessern möchten"
+            ],
+            "importantNote": {
+                "label": "Wichtig:",
+                "text": "Der Kurs ist nicht geeignet für Autodidakten und Fachleute nach längerer Pause"
+            },
+            "format": "Unterrichtsformate:",
+            "formatItems": {
+                "group": {
+                    "label": "Gruppe (350€):",
+                    "details": ["2 Meister", "2 Modelle (2 Hände)"]
+                },
+                "individual": {
+                    "label": "Einzeln (450€):",
+                    "details": [
+                        "Individueller Unterricht",
+                        "2 Modelle (4 Hände)"
+                    ]
+                }
+            }
+        }
+    }
+}

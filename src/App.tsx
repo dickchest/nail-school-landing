@@ -1,6 +1,7 @@
 import React from 'react';
 import ScheduleSection from './components/ScheduleSection';
 import Navbar from './components/Navbar';
+import { useTranslation, Trans } from 'react-i18next';
 import {
     Sparkles,
     MapPin,
@@ -17,6 +18,55 @@ import {
 } from 'lucide-react';
 
 function App() {
+    const { t } = useTranslation();
+
+    const whoItems = t('courses.basicManicure.whoItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const programItems = t('courses.basicManicure.programItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const scheduleItems = t('courses.basicManicure.scheduleItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const youGetItems = t('courses.basicManicure.youGetItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const whoItemsPedicure = t('courses.basicPedicure.whoItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const programItemsPedicure = t('courses.basicPedicure.programItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const formatItemsPedicure = t('courses.basicPedicure.formatItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const youGetItemsPedicure = t('courses.basicPedicure.youGetItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const whoItemsAdvance = t('courses.advancedCourse.whoItems', {
+        returnObjects: true,
+    }) as string[];
+
+    const formatGroup = t('courses.advancedCourse.formatItems.group', {
+        returnObjects: true,
+    }) as string[];
+
+    const formatIndividual = t(
+        'courses.advancedCourse.formatItems.individual',
+        {
+            returnObjects: true,
+        }
+    ) as string[];
+
     const handleWhatsApp = () => {
         const name =
             (document.querySelector('#name') as HTMLInputElement)?.value || '';
@@ -65,18 +115,17 @@ function App() {
                         </div>
                         <div className="max-w-3xl">
                             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Школа маникюра{' '}
+                                {t('hero.title')}{' '}
                                 <span className="text-gold">
-                                    Натальи Чайковской
+                                    {t('hero.name')}
                                 </span>
                             </h1>
                             <p className="text-xl text-white mb-8">
-                                Профессиональное обучение маникюру и педикюру в
-                                Эссене
+                                {t('hero.subtitle')}
                             </p>
                             <a href="#contact">
                                 <button className="bg-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-gold transition duration-300">
-                                    Записаться на курс
+                                    {t('hero.button')}
                                 </button>
                             </a>
                         </div>
@@ -91,7 +140,10 @@ function App() {
             >
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-16">
-                        Наши <span className="text-gold">Курсы</span>
+                        <Trans
+                            i18nKey="courses.sectionTitle"
+                            components={{ 1: <span className="text-gold" /> }}
+                        />
                     </h2>
 
                     {/* Basic Manicure Course */}
@@ -100,134 +152,94 @@ function App() {
                             <div>
                                 <h3 className="text-3xl font-bold text-white flex items-center gap-3">
                                     <GraduationCap className="text-gold w-8 h-8" />
-                                    Базовый курс маникюра
+                                    {t('courses.basicManicure.title')}
                                 </h3>
                                 <div className="flex items-center gap-4 mt-3 text-gray-400">
                                     <div className="flex items-center">
                                         <Clock className="w-5 h-5 mr-2 text-gold" />
-                                        3 дня
+                                        {t('courses.basicManicure.duration')}
                                     </div>
                                     <div className="flex items-center">
                                         <Users className="w-5 h-5 mr-2 text-gold" />
-                                        5 моделей
+                                        {t('courses.basicManicure.models')}
                                     </div>
                                 </div>
                             </div>
                             <div className="text-right">
                                 <p className="text-3xl font-bold text-gold">
-                                    500€
+                                    {t('courses.basicManicure.price')}
                                 </p>
-                                <p className="text-gray-400">Полный курс</p>
+                                <p className="text-gray-400">
+                                    {t('courses.basicManicure.priceNote')}
+                                </p>
                             </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h4 className="text-xl font-semibold text-gold mb-4">
-                                    Для кого подходит:
+                                    {t('courses.basicManicure.who')}
                                 </h4>
+
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Новичков без опыта</span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Самоучек, работающих по видео с
-                                            YouTube
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Мастеров после долгого перерыва
-                                        </span>
-                                    </li>
+                                    {whoItems.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <h4 className="text-xl font-semibold text-gold mt-6 mb-4">
-                                    Программа курса:
+                                    {t('courses.basicManicure.program')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Комбинированный маникюр</span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Покрытие в стык кутикуле</span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Выравнивание ногтевой пластины
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Архитектура ногтя</span>
-                                    </li>
+                                    {programItems.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
                             <div>
                                 <h4 className="text-xl font-semibold text-gold mb-4">
-                                    График обучения:
+                                    {t('courses.basicManicure.schedule')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-start text-white">
-                                        <div className="bg-gold text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                                            1
-                                        </div>
-                                        <span>
-                                            День первый: теория, работа с
-                                            фрезером, практика на первой модели
-                                        </span>
-                                    </li>
-                                    <li className="flex items-start text-white">
-                                        <div className="bg-gold text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                                            2
-                                        </div>
-                                        <span>
-                                            День второй: практика на двух
-                                            моделях
-                                        </span>
-                                    </li>
-                                    <li className="flex items-start text-white">
-                                        <div className="bg-gold text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                                            3
-                                        </div>
-                                        <span>
-                                            День третий: две модели и вручение
-                                            дипломов
-                                        </span>
-                                    </li>
+                                    {scheduleItems.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-start text-white"
+                                        >
+                                            <div className="bg-gold text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                                {idx + 1}
+                                            </div>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <h4 className="text-xl font-semibold text-gold mt-6 mb-4">
-                                    Вы получаете:
+                                    {t('courses.basicManicure.youGet')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Сертификат о прохождении курса
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Чек-лист "Базовая закупка для
-                                            мастеров"
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            3 месяца поддержки после курса
-                                        </span>
-                                    </li>
+                                    {youGetItems.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -239,25 +251,25 @@ function App() {
                             <div>
                                 <h3 className="text-3xl font-bold text-white flex items-center gap-3">
                                     <GraduationCap className="text-gold w-8 h-8" />
-                                    Базовый курс педикюра
+                                    {t('courses.basicPedicure.title')}
                                 </h3>
                                 <div className="flex items-center gap-4 mt-3 text-gray-400">
                                     <div className="flex items-center">
                                         <Clock className="w-5 h-5 mr-2 text-gold" />
-                                        1 день
+                                        {t('courses.basicPedicure.duration')}
                                     </div>
                                     <div className="flex items-center">
                                         <Users className="w-5 h-5 mr-2 text-gold" />
-                                        2 модели
+                                        {t('courses.basicPedicure.models')}
                                     </div>
                                 </div>
                             </div>
                             <div className="text-right">
                                 <p className="text-3xl font-bold text-gold">
-                                    350€ - 500€
+                                    {t('courses.basicPedicure.price')}
                                 </p>
                                 <p className="text-gray-400">
-                                    Группа / Индивидуально
+                                    {t('courses.basicPedicure.priceNote')}
                                 </p>
                             </div>
                         </div>
@@ -265,81 +277,64 @@ function App() {
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h4 className="text-xl font-semibold text-gold mb-4">
-                                    Для кого подходит:
+                                    {t('courses.basicPedicure.who')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Действующих мастеров маникюра
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Выпускников базового курса маникюра
-                                        </span>
-                                    </li>
+                                    {whoItemsPedicure.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <h4 className="text-xl font-semibold text-gold mt-6 mb-4">
-                                    Программа курса:
+                                    {t('courses.basicPedicure.program')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Обработка стоп специальной
-                                            косметикой
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Техника покрытия гель-лаком</span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Особенности педикюра</span>
-                                    </li>
+                                    {programItemsPedicure.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <Star className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
                             <div>
                                 <h4 className="text-xl font-semibold text-gold mb-4">
-                                    Формат обучения:
+                                    {t('courses.basicPedicure.format')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-start text-white">
-                                        <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0 mt-1" />
-                                        <span>
-                                            Групповой (2 мастера): 350€ с
-                                            человека
-                                        </span>
-                                    </li>
-                                    <li className="flex items-start text-white">
-                                        <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0 mt-1" />
-                                        <span>Индивидуальный: 500€</span>
-                                    </li>
+                                    {formatItemsPedicure.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <Diamond className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
-
                                 <h4 className="text-xl font-semibold text-gold mt-6 mb-4">
-                                    Вы получаете:
+                                    {t('courses.basicManicure.youGet')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Сертификат о прохождении курса
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Все материалы включены</span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>Квитанция для налоговой</span>
-                                    </li>
+                                    {youGetItemsPedicure.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -351,25 +346,25 @@ function App() {
                             <div>
                                 <h3 className="text-3xl font-bold text-white flex items-center gap-3">
                                     <GraduationCap className="text-gold w-8 h-8" />
-                                    Повышение квалификации
+                                    {t('courses.advancedCourse.title')}
                                 </h3>
                                 <div className="flex items-center gap-4 mt-3 text-gray-400">
                                     <div className="flex items-center">
                                         <Clock className="w-5 h-5 mr-2 text-gold" />
-                                        1 день
+                                        {t('courses.advancedCourse.duration')}
                                     </div>
                                     <div className="flex items-center">
                                         <Users className="w-5 h-5 mr-2 text-gold" />
-                                        2-4 модели
+                                        {t('courses.advancedCourse.models')}
                                     </div>
                                 </div>
                             </div>
                             <div className="text-right">
                                 <p className="text-3xl font-bold text-gold">
-                                    350€ - 450€
+                                    {t('courses.advancedCourse.price')}
                                 </p>
                                 <p className="text-gray-400">
-                                    Группа / Индивидуально
+                                    {t('courses.advancedCourse.priceNote')}
                                 </p>
                             </div>
                         </div>
@@ -377,32 +372,30 @@ function App() {
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h4 className="text-xl font-semibold text-gold mb-4">
-                                    Для кого подходит:
+                                    {t('courses.advancedCourse.who')}
                                 </h4>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Действующих мастеров
-                                            комбинированного маникюра
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center text-white">
-                                        <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
-                                        <span>
-                                            Желающих улучшить скорость и
-                                            качество работы
-                                        </span>
-                                    </li>
+                                    {whoItemsAdvance.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center text-white"
+                                        >
+                                            <CheckCircle className="text-gold w-5 h-5 mr-3 flex-shrink-0" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <div className="mt-6 p-4 bg-gold/10 rounded-lg border border-gold/20">
                                     <p className="text-white">
                                         <span className="text-gold font-semibold">
-                                            Важно:
+                                            {t(
+                                                'courses.advancedCourse.importantNote.label'
+                                            )}
                                         </span>{' '}
-                                        Курс не подходит для самоучек и мастеров
-                                        после длительного перерыва
+                                        {t(
+                                            'courses.advancedCourse.importantNote.text'
+                                        )}
                                     </p>
                                 </div>
                             </div>
