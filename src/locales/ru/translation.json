@@ -149,5 +149,18 @@
     "schedule": {
         "title": "Расписание",
         "highlight": "курсов"
-    }
+    },
+    "video": {
+        "title": "Видео с",
+        "highlight": "курсов"
+    },
+    "contact": {
+        "title": "Контакты",
+        "highlight": "Запись",
+        "namePlaceholder": "Ваше имя",
+        "emailPlaceholder": "Ваш email",
+        "messagePlaceholder": "Ваше сообщение",
+        "button": "Написать в WhatsApp"
+    },
+    "footer": "© 2025 Школа маникюра Натальи Чайковской. Все права защищены."
 }

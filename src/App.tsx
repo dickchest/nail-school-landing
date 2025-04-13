@@ -70,7 +70,7 @@ function App() {
     const testimonials = t('testimonials.list', { returnObjects: true }) as {
         name: string;
         review: string;
-      }[];
+    }[];
 
     const handleWhatsApp = () => {
         const name =
@@ -431,7 +431,7 @@ function App() {
                                         </ul>
                                     </li>
                                     <li className="text-white">
-                                    <p className="font-semibold mb-2">
+                                        <p className="font-semibold mb-2">
                                             {t(
                                                 'courses.advancedCourse.formatItems.individual.label'
                                             )}
@@ -461,7 +461,10 @@ function App() {
             <div id="gallery" className="py-20 bg-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-16">
-                    {t('ourWork.title')} <span className="text-gold">{t('ourWork.highlight')}</span>
+                        {t('ourWork.title')}{' '}
+                        <span className="text-gold">
+                            {t('ourWork.highlight')}
+                        </span>
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <img
@@ -503,28 +506,30 @@ function App() {
             <div id="testimonials" className="py-20 bg-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-12">
-                    {t('testimonials.title')}{' '}
-                    <span className="text-gold">{t('testimonials.highlight')}</span>
+                        {t('testimonials.title')}{' '}
+                        <span className="text-gold">
+                            {t('testimonials.highlight')}
+                        </span>
                     </h2>
 
                     <div className="overflow-x-auto scrollbar-hide">
                         <div className="flex gap-6 px-2 pb-4 w-max">
-                        {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="min-w-[280px] max-w-[320px] bg-gray-900 p-6 rounded-lg shadow-lg border border-gold/20 flex-shrink-0 flex flex-col h-auto"
-              >
-                <div className="overflow-auto">
-                  <Quote className="text-gold w-6 h-6 mb-4" />
-                  <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
-                    {testimonial.review}
-                  </p>
-                </div>
-                <p className="text-gold font-semibold mt-4">
-                  — {testimonial.name}
-                </p>
-              </div>
-            ))}
+                            {testimonials.map((testimonial, index) => (
+                                <div
+                                    key={index}
+                                    className="min-w-[280px] max-w-[320px] bg-gray-900 p-6 rounded-lg shadow-lg border border-gold/20 flex-shrink-0 flex flex-col h-auto"
+                                >
+                                    <div className="overflow-auto">
+                                        <Quote className="text-gold w-6 h-6 mb-4" />
+                                        <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
+                                            {testimonial.review}
+                                        </p>
+                                    </div>
+                                    <p className="text-gold font-semibold mt-4">
+                                        — {testimonial.name}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -537,7 +542,10 @@ function App() {
             <div id="video" className="py-20 bg-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-16">
-                        Видео с <span className="text-gold">курсов</span>
+                        {t('video.title')}{' '}
+                        <span className="text-gold">
+                            {t('video.highlight')}
+                        </span>
                     </h2>
 
                     <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
@@ -578,7 +586,10 @@ function App() {
             >
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-16">
-                        Контакты и <span className="text-gold">Запись</span>
+                        {t('contact.title')}{' '}
+                        <span className="text-gold">
+                            {t('contact.highlight')}
+                        </span>
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="space-y-6 text-white">
@@ -616,28 +627,30 @@ function App() {
                                 href="https://www.instagram.com/chaykovskaya_pronails"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center"
+                                className="flex items-center hover:text-gold transition"
                             >
                                 <Instagram className="text-gold w-6 h-6 mr-4" />
                                 <p>@chaykovskaya_pronails</p>
                             </a>
                         </div>
+
+                        {/* Форма */}
                         <form className="space-y-4">
                             <input
                                 id="name"
                                 type="text"
-                                placeholder="Ваше имя"
+                                placeholder={t('contact.namePlaceholder')}
                                 className="w-full p-3 bg-white/10 border border-gold/20 rounded-lg focus:outline-none focus:border-gold text-white"
                             />
                             <input
                                 id="email"
                                 type="email"
-                                placeholder="Ваш email"
+                                placeholder={t('contact.emailPlaceholder')}
                                 className="w-full p-3 bg-white/10 border border-gold/20 rounded-lg focus:outline-none focus:border-gold text-white"
                             />
                             <textarea
                                 id="message"
-                                placeholder="Ваше сообщение"
+                                placeholder={t('contact.messagePlaceholder')}
                                 rows={4}
                                 className="w-full p-3 bg-white/10 border border-gold/20 rounded-lg focus:outline-none focus:border-gold text-white"
                             ></textarea>
@@ -645,7 +658,7 @@ function App() {
                                 onClick={handleWhatsApp}
                                 className="bg-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition duration-300"
                             >
-                                Написать в WhatsApp
+                                {t('contact.button')}
                             </button>
                         </form>
                     </div>
@@ -655,10 +668,7 @@ function App() {
             {/* Footer */}
             <footer className="bg-black text-white py-8">
                 <div className="container mx-auto px-4 text-center">
-                    <p>
-                        © 2025 Школа маникюра Натальи Чайковской. Все права
-                        защищены.
-                    </p>
+                    <p>{t('footer')}</p>
                 </div>
             </footer>
         </div>

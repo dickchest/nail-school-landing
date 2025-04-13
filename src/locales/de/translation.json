@@ -152,5 +152,18 @@
     "schedule": {
         "title": "Kursplan",
         "highlight": ""
-    }
+    },
+    "video": {
+        "title": "Videos von",
+        "highlight": "Kursen"
+    },
+    "contact": {
+        "title": "Kontakt &",
+        "highlight": "Anmeldung",
+        "namePlaceholder": "Ihr Name",
+        "emailPlaceholder": "Ihre E-Mail",
+        "messagePlaceholder": "Ihre Nachricht",
+        "button": "In WhatsApp schreiben"
+    },
+    "footer": "© 2025 Nagelschule von Natalia Chaykovskaya. Alle Rechte vorbehalten."
 }
