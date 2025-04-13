@@ -349,7 +349,7 @@ function App() {
                     <div className="bg-black p-8 rounded-lg border border-gold/20 shadow-2xl shadow-gold/10">
                         <div className="flex items-center justify-between mb-8">
                             <div>
-                                <h3 className="text-3xl sm:text-3xl font-bold text-white flex items-center gap-3 break-words">
+                                <h3 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3 break-words">
                                     <GraduationCap className="text-gold w-8 h-8" />
                                     {t('courses.advancedCourse.title')}
                                 </h3>
