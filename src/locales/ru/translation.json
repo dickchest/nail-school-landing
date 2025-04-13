@@ -1,7 +1,7 @@
 {
     "navbar": {
         "courses": "Наши курсы",
-        "gallery": "Наши работы",
+        "gallery": "Работы учениц",
         "testimonials": "Отзывы учениц",
         "schedule": "Расписание курсов",
         "videos": "Видео с курсов",
@@ -105,8 +105,8 @@
         }
     },
     "ourWork": {
-        "title": "Наши",
-        "highlight": "Работы"
+        "title": "Работы ",
+        "highlight": "Учениц"
     },
     "testimonials": {
         "title": "Отзывы",

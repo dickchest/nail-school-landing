@@ -349,7 +349,7 @@ function App() {
                     <div className="bg-black p-8 rounded-lg border border-gold/20 shadow-2xl shadow-gold/10">
                         <div className="flex items-center justify-between mb-8">
                             <div>
-                                <h3 className="text-3xl font-bold text-white flex items-center gap-3">
+                                <h3 className="text-3xl sm:text-3xl font-bold text-white flex items-center gap-3 break-words">
                                     <GraduationCap className="text-gold w-8 h-8" />
                                     {t('courses.advancedCourse.title')}
                                 </h3>
@@ -365,7 +365,7 @@ function App() {
                                 </div>
                             </div>
                             <div className="text-right">
-                                <p className="text-3xl font-bold text-gold">
+                                <p className="text-3xl sm:text-3xl font-bold text-gold">
                                     {t('courses.advancedCourse.price')}
                                 </p>
                                 <p className="text-gray-400">
@@ -461,7 +461,8 @@ function App() {
             <div id="gallery" className="py-20 bg-black">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-16">
-                        {t('ourWork.title')}{' '}
+                        {t('ourWork.title')}
+                        {''}
                         <span className="text-gold">
                             {t('ourWork.highlight')}
                         </span>

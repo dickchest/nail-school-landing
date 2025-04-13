@@ -1,7 +1,7 @@
 {
     "navbar": {
         "courses": "Unsere Kurse",
-        "gallery": "Unsere Arbeiten",
+        "gallery": "Schülerinnen-Arbeiten",
         "testimonials": "Bewertungen",
         "schedule": "Kursplan",
         "videos": "Videos von Kursen",
@@ -108,7 +108,7 @@
         }
     },
     "ourWork": {
-        "title": "Unsere",
+        "title": "Schülerinnen-",
         "highlight": "Arbeiten"
     },
     "testimonials": {
