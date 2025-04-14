@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalForm from './components/ModalForm';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import ScheduleSection from './components/ScheduleSection';
 import Navbar from './components/Navbar';
 import { useTranslation, Trans } from 'react-i18next';
@@ -22,7 +22,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/mousewheel';
-import SwiperCore, { FreeMode, Mousewheel } from 'swiper';
 
 function App() {
     const { t } = useTranslation();
