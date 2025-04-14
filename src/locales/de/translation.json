@@ -14,6 +14,9 @@
         "button": "Zum Kurs anmelden"
     },
     "courses": {
+        "common": {
+            "wantButton": "Ich will den Kurs"
+        },
         "sectionTitle": "Unsere <1>Kurse</1>",
         "basicManicure": {
             "title": "Grundkurs Maniküre",
@@ -60,7 +63,7 @@
             ],
             "program": "Kursprogramm:",
             "programItems": [
-                "Fußpflege mit spezieller Kosmetik",
+                "Fußpflege mit spezieller Kosmetik und Pododisc-Scheiben",
                 "Technik des Gel-Lacks",
                 "Besonderheiten der Pediküre"
             ],
@@ -163,7 +166,15 @@
         "namePlaceholder": "Ihr Name",
         "emailPlaceholder": "Ihre E-Mail",
         "messagePlaceholder": "Ihre Nachricht",
-        "button": "In WhatsApp schreiben"
+        "button": "In WhatsApp schreiben",
+        "preFilledMessages": {
+            "basicManicure": "Hallo! Ich möchte den Grundkurs Maniküre buchen.",
+            "basicPedicure": "Hallo! Ich möchte den Grundkurs Pediküre buchen.",
+            "advanced": "Hallo! Ich möchte den Fortbildungskurs buchen."
+        }
+    },
+    "whatsapp": {
+        "message": "Hi! Ich heiße {{name}}. Meine E-Mail ist {{email}}. {{message}}"
     },
     "footer": "© 2025 Nagelschule von Natalia Chaykovskaya. Alle Rechte vorbehalten."
 }

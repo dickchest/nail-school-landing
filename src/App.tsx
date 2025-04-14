@@ -1,9 +1,11 @@
 import React from 'react';
+import ModalForm from './components/ModalForm';
+import { useState } from 'react';
 import ScheduleSection from './components/ScheduleSection';
 import Navbar from './components/Navbar';
 import { useTranslation, Trans } from 'react-i18next';
 import {
-    Sparkles,
+    // Sparkles,
     MapPin,
     Phone,
     Mail,
@@ -19,6 +21,15 @@ import {
 
 function App() {
     const { t } = useTranslation();
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [prefillMessage, setPrefillMessage] = useState('');
+
+    const handleCourseClick = (courseKey: string) => {
+        const translated = t(`contact.preFilledMessages.${courseKey}`);
+        setPrefillMessage(translated);
+        setModalOpen(true);
+    };
 
     const whoItems = t('courses.basicManicure.whoItems', {
         returnObjects: true,
@@ -81,9 +92,18 @@ function App() {
             (document.querySelector('#message') as HTMLTextAreaElement)
                 ?.value || '';
 
-        const fullMessage = `Здравствуйте! Меня зовут ${name}. Мой email: ${email}. ${message}`;
+        const fullMessage = t('whatsapp.message', { name, email, message });
         const phone = '4917662521437'; // твой номер в международном формате без +
 
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(
+            fullMessage
+        )}`;
+        window.open(url, '_blank');
+    };
+
+    const handleWhatsApp2 = (name: string, email: string, message: string) => {
+        const fullMessage = t('whatsapp.message', { name, email, message });
+        const phone = '4917662521437';
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(
             fullMessage
         )}`;
@@ -96,6 +116,7 @@ function App() {
         script.setAttribute('async', '');
         document.body.appendChild(script);
     }, []);
+
     return (
         <div className="min-h-screen bg-black overflow-x-hidden">
             {/* Navbar */}
@@ -248,6 +269,20 @@ function App() {
                                 </ul>
                             </div>
                         </div>
+
+                        {/* КНОПКА */}
+                        <div className="mt-8 text-center">
+                            <a href="#contact">
+                                <button
+                                    onClick={() =>
+                                        handleCourseClick('basicManicure')
+                                    }
+                                    className="bg-gold text-white px-6 py-3 rounded-full font-semibold hover:bg-gold transition duration-300"
+                                >
+                                    {t('courses.common.wantButton')}
+                                </button>
+                            </a>
+                        </div>
                     </div>
 
                     {/* Basic Pedicure Course */}
@@ -342,6 +377,19 @@ function App() {
                                     ))}
                                 </ul>
                             </div>
+                        </div>
+                        {/* КНОПКА педикюр */}
+                        <div className="mt-8 text-center">
+                            <a href="#contact">
+                                <button
+                                    onClick={() =>
+                                        handleCourseClick('basicPedicure')
+                                    }
+                                    className="bg-gold text-white px-6 py-3 rounded-full font-semibold hover:bg-gold transition duration-300"
+                                >
+                                    {t('courses.common.wantButton')}
+                                </button>
+                            </a>
                         </div>
                     </div>
 
@@ -452,6 +500,19 @@ function App() {
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                        {/* КНОПКА повышение*/}
+                        <div className="mt-8 text-center">
+                            <a href="#contact">
+                                <button
+                                    onClick={() =>
+                                        handleCourseClick('advanced')
+                                    }
+                                    className="bg-gold text-white px-6 py-3 rounded-full font-semibold hover:bg-gold transition duration-300"
+                                >
+                                    {t('courses.common.wantButton')}
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -665,6 +726,13 @@ function App() {
                     </div>
                 </div>
             </div>
+
+            <ModalForm
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                prefillMessage={prefillMessage}
+                handleWhatsApp={handleWhatsApp2}
+            />
 
             {/* Footer */}
             <footer className="bg-black text-white py-8">

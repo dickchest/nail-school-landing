@@ -78,7 +78,7 @@ export default function Navbar() {
             {/* Mobile Menu Items */}
             {menuOpen && (
                 <div className="md:hidden bg-black border-t border-gold px-4 pb-4">
-                    <ul className="flex flex-col space-y-4 pt-4 text-sm">
+                    <ul className="flex flex-col space-y-4 pt-4 text-sm text-right">
                         {navItems.map((item) => (
                             <li key={item.href}>
                                 <a
