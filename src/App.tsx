@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalForm from './components/ModalForm';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ScheduleSection from './components/ScheduleSection';
 import Navbar from './components/Navbar';
 import { useTranslation, Trans } from 'react-i18next';
@@ -18,6 +18,11 @@ import {
     GraduationCap,
     Quote,
 } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/mousewheel';
+import SwiperCore, { FreeMode, Mousewheel } from 'swiper';
 
 function App() {
     const { t } = useTranslation();
@@ -574,22 +579,35 @@ function App() {
                         </span>
                     </h2>
 
-                    <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
+                    <Swiper
+                        spaceBetween={16}
+                        slidesPerView="auto"
+                        grabCursor={true}
+                        mousewheel={true}
+                        breakpoints={{
+                            640: {
+                                spaceBetween: 24,
+                            },
+                            1024: {
+                                spaceBetween: 32,
+                            },
+                        }}
+                        className="pb-4"
+                    >
                         {testimonials.map((testimonial, index) => (
-                            <div
-                                key={index}
-                                className="inline-block align-top min-w-[280px] max-w-[300px] bg-gray-900 p-6 mr-6 rounded-lg shadow-lg border border-gold/20"
-                            >
-                                <Quote className="text-gold w-6 h-6 mb-4" />
-                                <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
-                                    {testimonial.review}
-                                </p>
-                                <p className="text-gold font-semibold mt-4">
-                                    — {testimonial.name}
-                                </p>
-                            </div>
+                            <SwiperSlide key={index} className="w-[280px]">
+                                <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gold/20 h-full">
+                                    <Quote className="text-gold w-6 h-6 mb-4" />
+                                    <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
+                                        {testimonial.review}
+                                    </p>
+                                    <p className="text-gold font-semibold mt-4">
+                                        — {testimonial.name}
+                                    </p>
+                                </div>
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </div>
             </div>
 
