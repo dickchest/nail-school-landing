@@ -574,25 +574,21 @@ function App() {
                         </span>
                     </h2>
 
-                    <div className="overflow-x-auto scrollbar-hide">
-                        <div className="flex gap-6 px-2 pb-4 w-max">
-                            {testimonials.map((testimonial, index) => (
-                                <div
-                                    key={index}
-                                    className="min-w-[280px] max-w-[320px] bg-gray-900 p-6 rounded-lg shadow-lg border border-gold/20 flex-shrink-0 flex flex-col h-auto"
-                                >
-                                    <div className="overflow-auto">
-                                        <Quote className="text-gold w-6 h-6 mb-4" />
-                                        <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
-                                            {testimonial.review}
-                                        </p>
-                                    </div>
-                                    <p className="text-gold font-semibold mt-4">
-                                        — {testimonial.name}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
+                        {testimonials.map((testimonial, index) => (
+                            <div
+                                key={index}
+                                className="inline-block align-top min-w-[280px] max-w-[300px] bg-gray-900 p-6 mr-6 rounded-lg shadow-lg border border-gold/20"
+                            >
+                                <Quote className="text-gold w-6 h-6 mb-4" />
+                                <p className="text-white text-sm leading-relaxed whitespace-pre-wrap">
+                                    {testimonial.review}
+                                </p>
+                                <p className="text-gold font-semibold mt-4">
+                                    — {testimonial.name}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
