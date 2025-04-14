@@ -671,12 +671,12 @@ function App() {
                             <div className="flex items-center">
                                 <MapPin className="text-gold w-6 h-6 mr-4" />
                                 <a
-                                    href="https://www.google.com/maps?q=Mülheimer+Str.+83,+45130+Essen"
+                                    href="https://www.google.com/maps?q=Mülheimer+Str.+83,+45145+Essen"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-gold transition"
                                 >
-                                    Mülheimer Str. 83, 45130 Essen
+                                    Mülheimer Str. 83, 45145 Essen
                                 </a>
                             </div>
                             <div className="flex items-center">
