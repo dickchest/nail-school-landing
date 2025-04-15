@@ -751,6 +751,20 @@ function App() {
             <footer className="bg-black text-white py-8">
                 <div className="container mx-auto px-4 text-center">
                     <p>{t('footer')}</p>
+                    <div className="mt-4">
+                        <a
+                            href="/impressum.html"
+                            className="text-gold hover:underline mx-2"
+                        >
+                            Impressum
+                        </a>
+                        <a
+                            href="/datenschutzerklaerung.html"
+                            className="text-gold hover:underline mx-2"
+                        >
+                            Datenschutzerklärung
+                        </a>
+                    </div>
                 </div>
             </footer>
         </div>
