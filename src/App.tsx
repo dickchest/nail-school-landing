@@ -49,7 +49,10 @@ function App() {
                 <strong>Kontakt</strong>
                 <br />
                 Telefon:{' '}
-                <a href="tel:+4917662521437" className="text-gold hover:underline">
+                <a
+                    href="tel:+4917662521437"
+                    className="text-gold hover:underline"
+                >
                     +49 176 62521437
                 </a>
                 <br />
