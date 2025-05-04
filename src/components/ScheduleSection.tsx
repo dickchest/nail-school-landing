@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { useTranslation } from 'react-i18next';
+import ModalForm from './ModalForm';
 
 interface Course {
     Курс: string;
@@ -15,6 +16,21 @@ export default function ScheduleSection() {
     const [courses, setCourses] = useState<Course[]>([]);
     const { i18n, t } = useTranslation();
     const currentLang = i18n.language;
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedCourseTitle, setSelectedCourseTitle] = useState('');
+    const [selectedCourseDate, setSelectedCourseDate] = useState('');
+    const handleWhatsApp = (name: string, email: string, message: string) => {
+        const url = `https://wa.me/4917662521437?text=${encodeURIComponent(
+            `Имя: ${name}\nEmail: ${email}\nКурс: ${selectedCourseTitle}\nСообщение: ${message}`
+        )}`;
+        window.open(url, '_blank');
+    };
+
+    const prefillMessage =
+        currentLang === 'de'
+            ? `Ich möchte mich für den Kurs anmelden:\n${selectedCourseTitle}\nDatum: ${selectedCourseDate}`
+            : `Хочу записаться на курс:\n${selectedCourseTitle}\nДата: ${selectedCourseDate}`;
 
     useEffect(() => {
         Papa.parse<Course>(
@@ -46,20 +62,36 @@ export default function ScheduleSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 text-white">
                     {courses.map((course, index) => {
                         const courseTitle =
-                            currentLang === 'de' ? course['Kurse (DE)'] : course['Курс'];
+                            currentLang === 'de'
+                                ? course['Kurse (DE)']
+                                : course['Курс'];
                         const courseDate =
-                            currentLang === 'de' ? course['Date (DE)'] : course['Дата'];
+                            currentLang === 'de'
+                                ? course['Date (DE)']
+                                : course['Дата'];
                         const courseTime =
-                            currentLang === 'de' ? course['Zeit (DE)'] : course['Время'];
+                            currentLang === 'de'
+                                ? course['Zeit (DE)']
+                                : course['Время'];
 
                         return (
                             <div
                                 key={index}
                                 className="bg-black border border-gold/20 rounded-lg p-6"
                             >
-                                <h3 className="text-xl font-semibold text-gold mb-2">
+                                <button
+                                    className="text-xl font-semibold text-gold mb-2 hover:underline"
+                                    onClick={() => {
+                                        setSelectedCourseTitle(
+                                            courseTitle || ''
+                                        );
+                                        setSelectedCourseDate(courseDate || '');
+                                        setIsModalOpen(true);
+                                    }}
+                                >
                                     {courseTitle}
-                                </h3>
+                                </button>
+
                                 <p>
                                     {courseDate} | {courseTime}
                                 </p>
@@ -68,6 +100,13 @@ export default function ScheduleSection() {
                     })}
                 </div>
             </div>
+
+            <ModalForm
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                prefillMessage={prefillMessage}
+                handleWhatsApp={handleWhatsApp}
+            />
         </div>
     );
 }
