@@ -12,9 +12,9 @@ export default function Navbar() {
 
     const navItems = [
         { href: '#courses', label: t('navbar.courses') },
+        { href: '#schedule', label: t('navbar.schedule') },
         { href: '#gallery', label: t('navbar.gallery') },
         { href: '#testimonials', label: t('navbar.testimonials') },
-        { href: '#schedule', label: t('navbar.schedule') },
         { href: '#video', label: t('navbar.videos') },
         { href: '#contact', label: t('navbar.contact') },
     ];

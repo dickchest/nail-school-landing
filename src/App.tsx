@@ -1184,6 +1184,9 @@ function App() {
                     </div>
                 </div>
             </div>
+            
+            {/* Schedule Section */}
+            <ScheduleSection />
 
             {/* Gallery Section */}
             <div id="gallery" className="py-20 bg-black">
@@ -1272,9 +1275,6 @@ function App() {
                     </Swiper>
                 </div>
             </div>
-
-            {/* Schedule Section */}
-            <ScheduleSection />
 
             {/* Video Section */}
             <div id="video" className="py-20 bg-black">
